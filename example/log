@@ -1,0 +1,18 @@
+
+-----------------------
+FungusNameCheck.R
+PID:333527
+2021-11-24 13:33:43
+-----------------------
+
+Loading required package: taxize
+
+Cross-checking list of 5 fungi from example/list
+
+Checked 1 of 5
+Checked 2 of 5
+Checked 3 of 5
+Checked 4 of 5
+Checked 5 of 5
+
+Results saved in checked_names_PID333527.csv
