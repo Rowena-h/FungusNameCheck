@@ -18,7 +18,7 @@ It requires the [**taxize**](https://github.com/ropensci/taxize) R package to ru
 
 The only input needed is a file containing a list of names **without a header**. To see an example, refer to [example/list](example/list).
 
-To run the script:
+To run the script in the command line:
 
 ```
 Rscript FungusNameCheck.R example/list
@@ -31,3 +31,5 @@ To run the script and additionally produce a log file:
 ```
 Rscript FungusNameCheck.R example/list 2>&1 | tee log
 ```
+
+If there is an `NA` in the current name column it means that the provided name can't be found anywhere in Species Fungorum, but as the script can't cope with typoes, it's probably worth double-checking for that before anything else.
