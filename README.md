@@ -32,4 +32,4 @@ To run the script and additionally produce a log file:
 Rscript FungusNameCheck.R example/list 2>&1 | tee log
 ```
 
-If there is an `NA` in the current name column it means that the provided name can't be found anywhere in Species Fungorum, but as the script can't cope with typoes, it's probably worth double-checking for that before anything else.
+If there is an `NA` in the current name column it means that the provided name can't be found anywhere in Species Fungorum, but as the script can't cope with typos, it's probably worth double-checking for that before anything else.
