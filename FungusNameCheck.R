@@ -33,12 +33,11 @@ species.check.df <- data.frame(input_name=unique(species.df$V1),
                                IF_current_name=NA)
 
 #####INDEX FUNGORUM NAME CHECKING LOOP#######
-#Write for loop to run the name check on each species
-pb <- txtProgressBar(min=0, max=length(species.check.df$input_name), initial=0, style=3) 
 
+#For each input name...
 for (i in 1:length(species.check.df$input_name)) { 
   
-  setTxtProgressBar(pb, i)
+  #Search for name
   result <- fg_name_search(species.check.df$input_name[i])
   
   #Check for successful search result
@@ -66,10 +65,15 @@ for (i in 1:length(species.check.df$input_name)) {
     } else if (result$name_of_fungus[1] == species.check.df$input_name[i])
       
       species.check.df$IF_current_name[i] <- result$name_of_fungus[1]
+    
   }
+  
+  #Print progress
+  message("Checked ", i, " of ", length(species.check.df$input_name))
+
 }
 
 #Write results to file
 write.csv(species.check.df, paste0("checked_names_PID", Sys.getpid(), ".csv"), row.names=FALSE, quote=FALSE)
 
-message("Results saved in checked_names_PID", Sys.getpid(), ".csv")
+message("\nResults saved in checked_names_PID", Sys.getpid(), ".csv")
