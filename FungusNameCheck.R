@@ -30,7 +30,7 @@ message("\nCross-checking list of ", length(species.df$V1), " fungi from ", list
 
 #Make dataframe to collect results checking current names (replace with your own species dataframe/the combined tree dataframe)
 species.check.df <- data.frame(input_name=unique(species.df$V1),
-                               IF_current_name=NA)
+                               SF_current_name=NA)
 
 #####INDEX FUNGORUM NAME CHECKING LOOP#######
 
@@ -51,20 +51,20 @@ for (i in 1:length(species.check.df$input_name)) {
         
         if (result$name_of_fungus[j] == species.check.df$input_name[i] &
             !is.na(result$current_name[j]) &
-            is.na(species.check.df$IF_current_name[i])) {
+            is.na(species.check.df$SF_current_name[i])) {
           
-          species.check.df$IF_current_name[i] <- result$current_name[j]
+          species.check.df$SF_current_name[i] <- result$current_name[j]
         }  
         
         #Stop checking once the current name is found
-        if (!is.na(species.check.df$IF_current_name[i])) break
+        if (!is.na(species.check.df$SF_current_name[i])) break
         
       }
       
       #If no current name column (i.e. a single hit), check that the name hit is exact
     } else if (result$name_of_fungus[1] == species.check.df$input_name[i])
       
-      species.check.df$IF_current_name[i] <- result$name_of_fungus[1]
+      species.check.df$SF_current_name[i] <- result$name_of_fungus[1]
     
   }
   
