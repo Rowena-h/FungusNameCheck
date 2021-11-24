@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-##Script to check a list of fungal species names for the most up to date classification in Index Fungorum##
+##Script to check a list of fungal species names for the most up to date nomenclature in Species Fungorum##
 
 message("\n-----------------------")
 message("FungusNameCheck.R")
