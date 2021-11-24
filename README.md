@@ -1,6 +1,6 @@
 # FungusNameCheck.R
 
-A tool to check fungus names for the most up to date classification according to [Species Fungorum](http://www.speciesfungorum.org/).
+A script to check fungus names for the most up to date classification according to [Species Fungorum](http://www.speciesfungorum.org/).
 
 ## Requirements
 
